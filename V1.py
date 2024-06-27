@@ -269,36 +269,38 @@ def display_forecast():
             selected_year = st.slider("请选择预测终止年份", 2022, 2040, 2022)
 
         tab1, tab2 = st.tabs(["📈 预测结果可视化", "📅 显示预测数据"])
-        tab1.subheader("预测结果可视化")
-        tab2.subheader("预测数据")
 
-        if selected_model == "GAMM模型（Generalized Additive Mixed Models, GAMM）":
-            st.image(r"https://github.com/yuanmanqiong/China_Diabetes_Disease_Burden_Prediction_Platform/blob/main/images/Prediction/%E5%9F%BA%E4%BA%8EGAMM%E6%A8%A1%E5%9E%8B%E6%8B%9F%E5%90%88%E7%9A%84SDI%E3%80%81%E6%88%90%E4%BA%BA%E8%B6%85%E9%87%8D%E7%8E%87%E4%B8%8E%E5%8F%91%E7%97%85%E7%8E%87%E9%97%B4%E7%9A%84%E6%9C%89%E6%95%88%E8%87%AA%E7%94%B1%E5%BA%A6.png?raw=true",
-                     caption="基于GAMM模型拟合的SDI、成人超重率与发病率间的有效自由度")
-            st.image(r"https://github.com/yuanmanqiong/China_Diabetes_Disease_Burden_Prediction_Platform/blob/main/images/Prediction/%E5%9F%BA%E4%BA%8EGAMM%E6%A8%A1%E5%9E%8B%E9%A2%84%E6%B5%8B%E6%88%90%E4%BA%BA%E8%B6%85%E9%87%8D%E7%8E%87%E4%B8%8D%E5%90%8C%E5%8F%91%E5%B1%95%E5%9C%BA%E6%99%AF%E4%B8%8B%E4%B8%AD%E5%9B%BD%E7%B3%96%E5%B0%BF%E7%97%852022-2040%E5%B9%B4ASIR%E7%9A%84%E5%8F%91%E5%B1%95%E8%B6%8B%E5%8A%BF.png?raw=true",
-                     caption="基于GAMM模型预测成人超重率不同发展场景下中国糖尿病2022-2040年ASIR的发展趋势（ASIR: age-standardized incident rate，年龄标化发病率）")
-        elif selected_model == "ARIMA模型（AutoRegressive Integrated Moving Average Model）":
-            st.image(r"https://github.com/yuanmanqiong/China_Diabetes_Disease_Burden_Prediction_Platform/blob/main/images/Prediction/1990-2021%E5%B9%B4%E5%9F%BA%E4%BA%8EARIMA%E6%A8%A1%E5%9E%8B%E6%8B%9F%E5%90%88%E4%B8%AD%E5%9B%BD%E7%B3%96%E5%B0%BF%E7%97%85%E5%B9%B4%E9%BE%84%E6%A0%87%E5%8C%96%E5%8F%91%E7%97%85%E7%8E%87.png?raw=true",
-                     caption="1990-2021年基于ARIMA模型拟合中国糖尿病年龄标化发病率")
-            st.image(r"https://github.com/yuanmanqiong/China_Diabetes_Disease_Burden_Prediction_Platform/blob/main/images/Prediction/%E5%9F%BA%E4%BA%8EARIMA%E6%A8%A1%E5%9E%8B%E5%AF%B9%E6%9C%AA%E6%9D%A52022-2040%E5%B9%B4%E7%9A%84%E7%B3%96%E5%B0%BF%E7%97%85%E5%B9%B4%E9%BE%84%E6%A0%87%E5%8C%96%E5%8F%91%E7%97%85%E7%8E%87%E9%A2%84%E6%B5%8B.png?raw=true",
-                     caption="基于ARIMA模型对未来2022-2040年的糖尿病年龄标化发病率预测")
-        elif selected_model == "LSTM模型（Long Short Term Memory）":
-            st.image(r"https://github.com/yuanmanqiong/China_Diabetes_Disease_Burden_Prediction_Platform/blob/main/images/Prediction/1990-2021%E5%B9%B4%E5%9F%BA%E4%BA%8ELSTM%E6%A8%A1%E5%9E%8B%E6%8B%9F%E5%90%88%E7%B3%96%E5%B0%BF%E7%97%85%E5%B9%B4%E9%BE%84%E6%A0%87%E5%8C%96%E5%8F%91%E7%97%85%E7%8E%87.png?raw=true",
-                     caption="1990-2021年基于LSTM模型拟合糖尿病年龄标化发病率")
-            st.image(r"https://github.com/yuanmanqiong/China_Diabetes_Disease_Burden_Prediction_Platform/blob/main/images/Prediction/%E5%9F%BA%E4%BA%8ELSTM%E6%A8%A1%E5%9E%8B%E5%AF%B9%E6%9C%AA%E6%9D%A52022-2040%E5%B9%B4%E7%9A%84%E7%B3%96%E5%B0%BF%E7%97%85%E5%B9%B4%E9%BE%84%E6%A0%87%E5%8C%96%E5%8F%91%E7%97%85%E7%8E%87%E9%A2%84%E6%B5%8B.png?raw=true",
-                     caption="基于LSTM模型对未来2022-2040年的糖尿病年龄标化发病率预测")
-        else:
-            st.image(r"https://github.com/yuanmanqiong/China_Diabetes_Disease_Burden_Prediction_Platform/blob/main/images/Prediction/1990-2021%E5%B9%B4%E5%9F%BA%E4%BA%8EARIMA-LSTM%E6%B7%B7%E5%90%88%E6%A8%A1%E5%9E%8B%E5%90%88%E7%B3%96%E5%B0%BF%E7%97%85%E5%B9%B4%E9%BE%84%E6%A0%87%E5%8C%96%E5%8F%91%E7%97%85%E7%8E%87.png?raw=true",
-                     caption="1990-2021年基于ARIMA-LSTM混合模型合糖尿病年龄标化发病率")
-            st.image(r"https://github.com/yuanmanqiong/China_Diabetes_Disease_Burden_Prediction_Platform/blob/main/images/Prediction/%E5%9F%BA%E4%BA%8EARIMA-LSTM%E6%B7%B7%E5%90%88%E6%A8%A1%E5%9E%8B%E5%AF%B9%E6%9C%AA%E6%9D%A52022-2040%E5%B9%B4%E7%9A%84%E7%B3%96%E5%B0%BF%E7%97%85%E5%B9%B4%E9%BE%84%E6%A0%87%E5%8C%96%E5%8F%91%E7%97%85%E7%8E%87%E9%A2%84%E6%B5%8B.png?raw=true",
-                     caption="基于ARIMA-LSTM混合模型对未来2022-2040年的糖尿病年龄标化发病率预测")
+        with tab1:
+            tab1.subheader("预测结果可视化")
+            if selected_model == "GAMM模型（Generalized Additive Mixed Models, GAMM）":
+                st.image(r"https://github.com/yuanmanqiong/China_Diabetes_Disease_Burden_Prediction_Platform/blob/main/images/Prediction/%E5%9F%BA%E4%BA%8EGAMM%E6%A8%A1%E5%9E%8B%E6%8B%9F%E5%90%88%E7%9A%84SDI%E3%80%81%E6%88%90%E4%BA%BA%E8%B6%85%E9%87%8D%E7%8E%87%E4%B8%8E%E5%8F%91%E7%97%85%E7%8E%87%E9%97%B4%E7%9A%84%E6%9C%89%E6%95%88%E8%87%AA%E7%94%B1%E5%BA%A6.png?raw=true",
+                         caption="基于GAMM模型拟合的SDI、成人超重率与发病率间的有效自由度")
+                st.image(r"https://github.com/yuanmanqiong/China_Diabetes_Disease_Burden_Prediction_Platform/blob/main/images/Prediction/%E5%9F%BA%E4%BA%8EGAMM%E6%A8%A1%E5%9E%8B%E9%A2%84%E6%B5%8B%E6%88%90%E4%BA%BA%E8%B6%85%E9%87%8D%E7%8E%87%E4%B8%8D%E5%90%8C%E5%8F%91%E5%B1%95%E5%9C%BA%E6%99%AF%E4%B8%8B%E4%B8%AD%E5%9B%BD%E7%B3%96%E5%B0%BF%E7%97%852022-2040%E5%B9%B4ASIR%E7%9A%84%E5%8F%91%E5%B1%95%E8%B6%8B%E5%8A%BF.png?raw=true",
+                         caption="基于GAMM模型预测成人超重率不同发展场景下中国糖尿病2022-2040年ASIR的发展趋势（ASIR: age-standardized incident rate，年龄标化发病率）")
+            elif selected_model == "ARIMA模型（AutoRegressive Integrated Moving Average Model）":
+                st.image(r"https://github.com/yuanmanqiong/China_Diabetes_Disease_Burden_Prediction_Platform/blob/main/images/Prediction/1990-2021%E5%B9%B4%E5%9F%BA%E4%BA%8EARIMA%E6%A8%A1%E5%9E%8B%E6%8B%9F%E5%90%88%E4%B8%AD%E5%9B%BD%E7%B3%96%E5%B0%BF%E7%97%85%E5%B9%B4%E9%BE%84%E6%A0%87%E5%8C%96%E5%8F%91%E7%97%85%E7%8E%87.png?raw=true",
+                         caption="1990-2021年基于ARIMA模型拟合中国糖尿病年龄标化发病率")
+                st.image(r"https://github.com/yuanmanqiong/China_Diabetes_Disease_Burden_Prediction_Platform/blob/main/images/Prediction/%E5%9F%BA%E4%BA%8EARIMA%E6%A8%A1%E5%9E%8B%E5%AF%B9%E6%9C%AA%E6%9D%A52022-2040%E5%B9%B4%E7%9A%84%E7%B3%96%E5%B0%BF%E7%97%85%E5%B9%B4%E9%BE%84%E6%A0%87%E5%8C%96%E5%8F%91%E7%97%85%E7%8E%87%E9%A2%84%E6%B5%8B.png?raw=true",
+                         caption="基于ARIMA模型对未来2022-2040年的糖尿病年龄标化发病率预测")
+            elif selected_model == "LSTM模型（Long Short Term Memory）":
+                st.image(r"https://github.com/yuanmanqiong/China_Diabetes_Disease_Burden_Prediction_Platform/blob/main/images/Prediction/1990-2021%E5%B9%B4%E5%9F%BA%E4%BA%8ELSTM%E6%A8%A1%E5%9E%8B%E6%8B%9F%E5%90%88%E7%B3%96%E5%B0%BF%E7%97%85%E5%B9%B4%E9%BE%84%E6%A0%87%E5%8C%96%E5%8F%91%E7%97%85%E7%8E%87.png?raw=true",
+                         caption="1990-2021年基于LSTM模型拟合糖尿病年龄标化发病率")
+                st.image(r"https://github.com/yuanmanqiong/China_Diabetes_Disease_Burden_Prediction_Platform/blob/main/images/Prediction/%E5%9F%BA%E4%BA%8ELSTM%E6%A8%A1%E5%9E%8B%E5%AF%B9%E6%9C%AA%E6%9D%A52022-2040%E5%B9%B4%E7%9A%84%E7%B3%96%E5%B0%BF%E7%97%85%E5%B9%B4%E9%BE%84%E6%A0%87%E5%8C%96%E5%8F%91%E7%97%85%E7%8E%87%E9%A2%84%E6%B5%8B.png?raw=true",
+                         caption="基于LSTM模型对未来2022-2040年的糖尿病年龄标化发病率预测")
+            else:
+                st.image(r"https://github.com/yuanmanqiong/China_Diabetes_Disease_Burden_Prediction_Platform/blob/main/images/Prediction/1990-2021%E5%B9%B4%E5%9F%BA%E4%BA%8EARIMA-LSTM%E6%B7%B7%E5%90%88%E6%A8%A1%E5%9E%8B%E5%90%88%E7%B3%96%E5%B0%BF%E7%97%85%E5%B9%B4%E9%BE%84%E6%A0%87%E5%8C%96%E5%8F%91%E7%97%85%E7%8E%87.png?raw=true",
+                         caption="1990-2021年基于ARIMA-LSTM混合模型合糖尿病年龄标化发病率")
+                st.image(r"https://github.com/yuanmanqiong/China_Diabetes_Disease_Burden_Prediction_Platform/blob/main/images/Prediction/%E5%9F%BA%E4%BA%8EARIMA-LSTM%E6%B7%B7%E5%90%88%E6%A8%A1%E5%9E%8B%E5%AF%B9%E6%9C%AA%E6%9D%A52022-2040%E5%B9%B4%E7%9A%84%E7%B3%96%E5%B0%BF%E7%97%85%E5%B9%B4%E9%BE%84%E6%A0%87%E5%8C%96%E5%8F%91%E7%97%85%E7%8E%87%E9%A2%84%E6%B5%8B.png?raw=true",
+                         caption="基于ARIMA-LSTM混合模型对未来2022-2040年的糖尿病年龄标化发病率预测")
 
         with tab2.container():
+            tab2.subheader("预测数据")
             result_path = 'https://raw.githubusercontent.com/yuanmanqiong/China_Diabetes_Disease_Burden_Prediction_Platform/main/result.csv'
             result = get_csv(result_path)
             tab2.dataframe(result)
             result_csv = result.to_csv(index=False)
             tab2.download_button(label='下载数据（.csv）', data=result_csv, file_name='prediction_result.csv', mime="text/csv")
+            
     except Exception as e:
         st.error("Oops! 发生了未知错误")
 
