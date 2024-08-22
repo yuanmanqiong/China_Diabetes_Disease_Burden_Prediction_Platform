@@ -4,7 +4,7 @@ import streamlit.components.v1 as components
 
 st.set_page_config(layout="wide", page_title="糖尿病疾病负担预测平台", page_icon="🧊")
 hide_github_icon = """
-#GithubIcon {
+#MainMenu {
   visibility: hidden;
 }
 """
