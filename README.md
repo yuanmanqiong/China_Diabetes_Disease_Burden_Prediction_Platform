@@ -1,1 +1,1 @@
-# China_Diabetes_Disease_Burden_Prediction_Platform
+# Diabetes_Disease_Burden_Prediction_Platform
