@@ -7,7 +7,6 @@ st.set_page_config(layout="wide", page_title="糖尿病疾病负担预测平台"
 hide_streamlit_style = """
             <style>
             #MainMenu {visibility: hidden;}
-            #GithubIcon {visibility: hidden;}
             footer {visibility: hidden;}
             </style>
             """
