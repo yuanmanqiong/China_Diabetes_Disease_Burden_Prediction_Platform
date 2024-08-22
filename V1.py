@@ -189,7 +189,7 @@ def display_trends():
 
 def display_forecast():
     try:
-        st.title("未来中国糖尿病疾病负担的预测结果")
+        st.title("未来糖尿病疾病负担的预测结果")
 
         selected_indicator = st.selectbox(
                                         "请选择指标",
