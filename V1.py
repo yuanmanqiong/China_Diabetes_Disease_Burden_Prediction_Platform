@@ -2,7 +2,7 @@ import pandas as pd
 import streamlit as st
 import streamlit.components.v1 as components
 
-st.set_page_config(layout="wide", page_title="中国糖尿病疾病负担预测平台", page_icon="🧊")
+st.set_page_config(layout="wide", page_title="糖尿病疾病负担预测平台", page_icon="🧊")
 
 def change_font(txt, font_size='12px', bold=False):
     font_weight = 'bold' if bold else 'normal'
@@ -99,7 +99,7 @@ def get_page_from_url():
 
 def homepage():
     st.title("""
-            中国糖尿病疾病负担预测平台
+            糖尿病疾病负担预测平台
             """)
 
     st.write("""
