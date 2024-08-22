@@ -3,18 +3,12 @@ import streamlit as st
 import streamlit.components.v1 as components
 
 st.set_page_config(layout="wide", page_title="糖尿病疾病负担预测平台", page_icon="🧊")
-st.markdown(
-    """
-    <style>
-    .css-1jc7ptx, .e1ewe7hr3, .viewerBadge_container__1QSob,
-    .styles_viewerBadge__1yB5_, .viewerBadge_link__1S137,
-    .viewerBadge_text__1JaDK {
-        display: none;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
+hide_github_icon = """
+#GithubIcon {
+  visibility: hidden;
+}
+"""
+st.markdown(hide_github_icon, unsafe_allow_html=True)
 
 def change_font(txt, font_size='12px', bold=False):
     font_weight = 'bold' if bold else 'normal'
